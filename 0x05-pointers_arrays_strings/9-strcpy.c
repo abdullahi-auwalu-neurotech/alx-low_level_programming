@@ -2,9 +2,11 @@
 #include <stdio.h>
 
 /**
- * *strcpy - copy a string to a buffer
- * @*dest: the pointer to the buffer
- * @*src: the pointer to the string
+ * _strcpy - copy a string to a buffer
+ * @dest: the pointer to the buffer
+ * @src: the pointer to the string
+ *
+ * Return: returns dest
  */
 char *_strcpy(char *dest, char *src)
 {
@@ -21,5 +23,5 @@ char *_strcpy(char *dest, char *src)
 		i--;
 	}
 	dest[j] = '\0';
-	return dest;
+	return (dest);
 }
