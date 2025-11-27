@@ -19,5 +19,9 @@ void print_array(int *a, int n)
 		}
 		printf("%d\n", a[m]);
 	}
+	else
+	{
+		_putchar('\n');
+	}
 
 }
