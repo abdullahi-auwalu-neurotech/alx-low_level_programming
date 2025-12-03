@@ -44,5 +44,11 @@ char *cap_string(char *str)
 		}
 		i++;
 	}
+	i = 0;
+	if ((str[i] >= 'a') && (str[i] <= 'z'))
+	{
+		j = str[i] - 97;
+		str[i] = upp[j];
+	}
 	return (str);
 }
