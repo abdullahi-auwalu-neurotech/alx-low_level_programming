@@ -12,7 +12,7 @@ char *cap_string(char *str)
 	char upp[] = {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H',
 		'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q',
 		'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', '\0'};
-	int j;
+	int j = 0;
 	int i = 0;
 
 	while (str[i] != '\0')
@@ -25,8 +25,7 @@ char *cap_string(char *str)
 			i++;
 			if ((str[i] >= 'a') && (str[i] <= 'z'))
 			{
-				j = str[i] - 97;
-				str[i] = upp[j];
+				changeupp(str, upp, i, j);
 			}
 			if ((str[i] == '\n') || (str[i] == '\t') || (str[i] == ' ')
 					|| (str[i] == ',') || (str[i] == ';') || (str[i] == '.')
@@ -37,8 +36,7 @@ char *cap_string(char *str)
 				i++;
 				if ((str[i] >= 'a') && (str[i] <= 'z'))
 				{
-					j = str[i] - 97;
-					str[i] = upp[j];
+					changeupp(str, upp, i, j);
 				}
 			}
 		}
@@ -47,8 +45,26 @@ char *cap_string(char *str)
 	i = 0;
 	if ((str[i] >= 'a') && (str[i] <= 'z'))
 	{
-		j = str[i] - 97;
-		str[i] = upp[j];
+		/*j = str[i] - 97;*/
+		/*str[i] = upp[j];*/
+		changeupp(str, upp, i, j);
 	}
 	return (str);
 }
+
+/**
+ * changeupp - changes lower to upper
+ * @str: a string
+ * @upp: array of uppercase letters
+ * @i: str index value
+ * @j: upp index value
+ */
+
+void changeupp(char *str, char *upp, int i, int j)
+{
+
+	j = str[i] - 97;
+	str[i] = upp[j];
+}
+
+
