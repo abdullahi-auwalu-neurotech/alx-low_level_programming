@@ -6,7 +6,7 @@
  * @width: the column
  * @height: the row
  *
- * Return: NULL on failure, or width or height is less than 0
+ * Return: NULL on failure, or width or height is 0 or less
  *	otherwise, a pointer to 2D array
  */
 int **alloc_grid(int width, int height)
@@ -30,6 +30,7 @@ int **alloc_grid(int width, int height)
 				free(grid[i]);
 				i--;
 			}
+			free(grid);
 			return (NULL);
 		}
 		i++;
