@@ -1,0 +1,22 @@
+#include "func_ptr.h"
+
+/**
+ * array_iterator - executes a function given as
+ *			parameter on each element of an array
+ * @size: size of the array
+ * @action: pointer to the function
+ * @array: pointer to the array
+ *
+ * Return: nothing
+ */
+void array_iterator(int *array, size_t size, void (*action)(int))
+{
+	unsigned int i = 0;
+
+	while (i < size)
+	{
+		action(*(array + i));
+		i++;
+	}
+}
+
